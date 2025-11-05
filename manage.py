@@ -3,9 +3,10 @@
 import os
 
 def main():
-    """Главная функция, передающая управление Django: 
-    runserver
-    createsuperuser
+    """Главная функция, передающая управление Django:
+    runserver          запустить веб-сервер разработчика
+    startapp           создать новое приложение
+    createsuperuser    создать суперпользователя (нужна БД!)
     makemigrations
     migrate
     """
