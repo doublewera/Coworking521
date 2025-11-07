@@ -1,1 +1,8 @@
-<h1>Главная страница</h1>
+{% extends 'mainpage/header_footer.html' %}
+
+{% block content %}
+{% comment %}
+ А такой - можно. Он комментирует даже другие директивы
+{% endcomment %}
+<p>Здесь что-то про наш сайт</p>
+{% endblock %}
