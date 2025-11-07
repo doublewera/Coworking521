@@ -4,7 +4,13 @@
 {% comment %}
  А такой - можно. Он комментирует даже другие директивы
 {% endcomment %}
-<h1>Сегодня админ: {{admin_today}}</h1>
+<table border="1">
+    <tr><th colspan="2">Наши админы</th></tr>
+    <tr><th>Имя</th><th>Возраст</th></tr>
+    {% for admin in all_admins %}
+    <tr><td>{{admin.name}}</td><td>{{admin.age}}</td></tr>
+    {% endfor %}
+</table>
 <p>Здесь что-то про наш сайт</p>
 
 {% endblock %}
