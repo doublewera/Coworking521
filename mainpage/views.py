@@ -18,3 +18,9 @@ def index(request):
         'mainpage/index.html',   # путь к шаблону после templates 
         context
     )
+
+def show_tasks(request):
+    return render(  # создание страница сайта по шаблону
+        request,
+        'mainpage/task.html',
+    )
