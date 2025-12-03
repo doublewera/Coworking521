@@ -28,7 +28,11 @@ def show_tasks(request):
     for t in my_tasks:
         # t - один объект класса Task! можно вывести на печать его поле!
         print(t.deadline, t.description)
+    context = {
+        'all_tasks': my_tasks
+    }
     return render(  # создание страница сайта по шаблону
         request,
         'mainpage/task.html',
+        context
     )

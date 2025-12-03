@@ -1,1 +1,15 @@
-<h1>Здесь  будут  задачи</h1>
+<h1>Наши задачи</h1>
+{{all_tasks}}
+
+<ol>
+{% for task in all_tasks %}
+  <li>{{task}}</li>
+{% endfor %}
+</ol>
+
+
+<ol>
+{% for task in all_tasks %}
+  <li>{{task.deadline}} - {{task.description}}</li>
+{% endfor %}
+</ol>
