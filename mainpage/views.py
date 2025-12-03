@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . import models
 
 def index(request):
     context = {
@@ -19,7 +20,14 @@ def index(request):
         context
     )
 
+# ВЫЗОВ ЭТОЙ ФУНКЦИИ ПРОИСХОДИТ В МОМЕНТ ОБРАЩЕНИЯ ПО ПУТИ В БРАУЗЕРЕ!
 def show_tasks(request):
+    my_tasks = models.Task.objects.all()  # Класс, дай нам все свои объекты, хранящиеся в БД
+    # это аналог select *
+    # Просмотрим циклом все полученные задачи
+    for t in my_tasks:
+        # t - один объект класса Task! можно вывести на печать его поле!
+        print(t.deadline, t.description)
     return render(  # создание страница сайта по шаблону
         request,
         'mainpage/task.html',
